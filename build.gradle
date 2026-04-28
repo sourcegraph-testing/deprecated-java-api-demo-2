@@ -1,0 +1,18 @@
+plugins {
+    id 'application'
+}
+
+group = 'dev.trly.java.example.primitive.wrappers'
+version = '1.0.0'
+
+repositories {
+    mavenCentral()
+}
+
+application {
+    mainClass = 'dev.trly.java.example.primitive.wrappers.OrderRollupApp'
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.compilerArgs.addAll(['-Xlint:deprecation', '-Xlint:removal'])
+}
