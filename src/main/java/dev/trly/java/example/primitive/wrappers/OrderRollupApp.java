@@ -6,16 +6,16 @@ public final class OrderRollupApp {
 
     public static void main(String[] args) {
         final Integer[] boxCounts = {
-            new Integer(4),
-            new Integer(7),
-            new Integer(3),
-            new Integer(5)
+            Integer.valueOf(4),
+            Integer.valueOf(7),
+            Integer.valueOf(3),
+            Integer.valueOf(5)
         };
         final Long[] orderValues = {
-            new Long(1299L),
-            new Long(2450L),
-            new Long(875L),
-            new Long(1625L)
+            Long.valueOf(1299L),
+            Long.valueOf(2450L),
+            Long.valueOf(875L),
+            Long.valueOf(1625L)
         };
 
         int totalBoxes = 0;
