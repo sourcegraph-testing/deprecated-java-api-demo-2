@@ -6,22 +6,22 @@ public final class InventoryAuditApp {
 
     public static void main(String[] args) {
         final Double[] unitPrices = {
-            Double.valueOf(19.99),
-            Double.valueOf(4.50),
-            Double.valueOf(120.00),
-            Double.valueOf(7.25)
+            new Double(19.99),
+            new Double(4.50),
+            new Double(120.00),
+            new Double(7.25)
         };
         final Boolean[] inStock = {
-            Boolean.valueOf(true),
-            Boolean.valueOf(false),
-            Boolean.valueOf(true),
-            Boolean.valueOf(true)
+            new Boolean(true),
+            new Boolean(false),
+            new Boolean(true),
+            new Boolean(true)
         };
         final Character[] grades = {
-            Character.valueOf('A'),
-            Character.valueOf('C'),
-            Character.valueOf('B'),
-            Character.valueOf('A')
+            new Character('A'),
+            new Character('C'),
+            new Character('B'),
+            new Character('A')
         };
 
         double totalValue = 0.0;
