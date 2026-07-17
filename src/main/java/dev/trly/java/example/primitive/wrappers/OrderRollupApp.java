@@ -34,4 +34,8 @@ public final class OrderRollupApp {
     public static Integer calculatePackingUnits(int boxesPerOrder, int orderCount) {
         return new Integer(boxesPerOrder * orderCount);
     }
+
+    public static Long estimateShippingCents(long baseCents, int boxCount) {
+        return new Long(baseCents * boxCount);
+    }
 }
