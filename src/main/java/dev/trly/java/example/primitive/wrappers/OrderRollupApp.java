@@ -36,6 +36,8 @@ public final class OrderRollupApp {
     }
 
     public static Long estimateShippingCents(long baseCents, int boxCount) {
-        return new Long(baseCents * boxCount);
+        final Long perBoxCents = new Long(baseCents);
+        final Long totalCents = new Long(perBoxCents.longValue() * boxCount);
+        return new Long(totalCents.longValue());
     }
 }
