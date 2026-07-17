@@ -6,22 +6,22 @@ public final class InventoryAuditApp {
 
     public static void main(String[] args) {
         final Double[] unitPrices = {
-            new Double(19.99),
-            new Double(4.50),
-            new Double(120.00),
-            new Double(7.25)
+            Double.valueOf(19.99),
+            Double.valueOf(4.50),
+            Double.valueOf(120.00),
+            Double.valueOf(7.25)
         };
         final Boolean[] inStock = {
-            new Boolean(true),
-            new Boolean(false),
-            new Boolean(true),
-            new Boolean(true)
+            Boolean.valueOf(true),
+            Boolean.valueOf(false),
+            Boolean.valueOf(true),
+            Boolean.valueOf(true)
         };
         final Character[] grades = {
-            new Character('A'),
-            new Character('C'),
-            new Character('B'),
-            new Character('A')
+            Character.valueOf('A'),
+            Character.valueOf('C'),
+            Character.valueOf('B'),
+            Character.valueOf('A')
         };
 
         double totalValue = 0.0;
@@ -47,5 +47,9 @@ public final class InventoryAuditApp {
 
     public static Double calculateAverageValue(double totalValue, int itemCount) {
         return new Double(totalValue / itemCount);
+    }
+
+    public static Integer countAvailableItems(int totalItems, int outOfStockItems) {
+        return new Integer(totalItems - outOfStockItems);
     }
 }
