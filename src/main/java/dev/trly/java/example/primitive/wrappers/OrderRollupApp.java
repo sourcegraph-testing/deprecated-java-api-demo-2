@@ -30,4 +30,8 @@ public final class OrderRollupApp {
 
         System.out.printf("Shipped %d boxes for $%.2f%n", totalBoxes, totalCents / 100.0);
     }
+
+    public static Integer calculatePackingUnits(int boxesPerOrder, int orderCount) {
+        return new Integer(boxesPerOrder * orderCount);
+    }
 }
