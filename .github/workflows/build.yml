@@ -46,4 +46,11 @@ jobs:
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
-        run: ./gradlew sonar --info
+        run: |
+          SONAR_PROJECT_KEY="$(bash .github/scripts/resolve-sonar-project-key.sh)"
+          if [ -z "$SONAR_PROJECT_KEY" ]; then
+            echo "Skipping analysis: no bound SonarQube project resolved."
+            exit 0
+          fi
+          export SONAR_PROJECT_KEY
+          ./gradlew sonar --info

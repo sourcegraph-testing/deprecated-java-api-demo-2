@@ -5,7 +5,9 @@ plugins {
 
 sonar {
   properties {
-    property "sonar.projectKey", "deprecated-java-api-demo-2"
+    // The SonarQube GitHub App gives imported projects a generated key, so CI
+    // looks the real key up and passes it in through SONAR_PROJECT_KEY.
+    property "sonar.projectKey", System.getenv("SONAR_PROJECT_KEY") ?: "deprecated-java-api-demo-2"
     property "sonar.projectName", "deprecated-java-api-demo-2"
   }
 }
