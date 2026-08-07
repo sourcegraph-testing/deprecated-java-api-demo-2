@@ -1,5 +1,13 @@
 plugins {
     id 'application'
+    id "org.sonarqube" version "7.3.1.8318"
+}
+
+sonar {
+  properties {
+    property "sonar.projectKey", "deprecated-java-api-demo-2"
+    property "sonar.projectName", "deprecated-java-api-demo-2"
+  }
 }
 
 group = 'dev.trly.java.example.primitive.wrappers'
