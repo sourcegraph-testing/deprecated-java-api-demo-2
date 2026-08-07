@@ -43,7 +43,10 @@ jobs:
       - name: SonarQube analysis
         # Analysis is advisory: a failed or unconfigured scan must not fail the build.
         continue-on-error: true
+        # SONAR_PROJECT_KEY is a repository variable holding the key SonarQube
+        # assigned when this repo was imported via the GitHub App.
+        if: ${{ vars.SONAR_PROJECT_KEY != '' }}
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
-        run: ./gradlew sonar --info
+        run: ./gradlew sonar --info -Dsonar.projectKey=${{ vars.SONAR_PROJECT_KEY }}
