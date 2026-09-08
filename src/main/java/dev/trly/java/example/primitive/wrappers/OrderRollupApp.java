@@ -1,6 +1,11 @@
 package dev.trly.java.example.primitive.wrappers;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public final class OrderRollupApp {
+    private static final Logger LOGGER = LoggerFactory.getLogger(OrderRollupApp.class);
+
     private OrderRollupApp() {
     }
 
@@ -25,10 +30,10 @@ public final class OrderRollupApp {
             final long cents = orderValues[index].longValue();
             totalBoxes += boxes;
             totalCents += cents;
-            System.out.printf("Order %d: %d boxes, $%.2f%n", index + 1, boxes, cents / 100.0);
+            LOGGER.info("Order {}: {} boxes, ${}", index + 1, boxes, String.format("%.2f", cents / 100.0));
         }
 
-        System.out.printf("Shipped %d boxes for $%.2f%n", totalBoxes, totalCents / 100.0);
+        LOGGER.info("Shipped {} boxes for ${}", totalBoxes, String.format("%.2f", totalCents / 100.0));
     }
 
     public static Integer calculatePackingUnits(int boxesPerOrder, int orderCount) {
