@@ -1,6 +1,11 @@
 package dev.trly.java.example.primitive.wrappers;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public final class InventoryAuditApp {
+    private static final Logger LOGGER = LoggerFactory.getLogger(InventoryAuditApp.class);
+
     private InventoryAuditApp() {
     }
 
@@ -34,15 +39,15 @@ public final class InventoryAuditApp {
                 totalValue += price;
                 availableCount++;
             }
-            System.out.printf(
-                "Item %d: $%.2f, grade %c, %s%n",
+            LOGGER.info(
+                "Item {}: ${}, grade {}, {}",
                 index + 1,
-                price,
-                grade,
+                String.format("%.2f", price),
+                String.format("%c", grade),
                 available ? "in stock" : "out of stock");
         }
 
-        System.out.printf("Available items: %d worth $%.2f%n", availableCount, totalValue);
+        LOGGER.info("Available items: {} worth ${}", availableCount, String.format("%.2f", totalValue));
     }
 
     public static Double calculateAverageValue(double totalValue, int itemCount) {
