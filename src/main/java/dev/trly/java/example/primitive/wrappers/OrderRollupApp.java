@@ -6,16 +6,16 @@ public final class OrderRollupApp {
 
     public static void main(String[] args) {
         final Integer[] boxCounts = {
-            new Integer(4),
-            new Integer(7),
-            new Integer(3),
-            new Integer(5)
+            Integer.valueOf(4),
+            Integer.valueOf(7),
+            Integer.valueOf(3),
+            Integer.valueOf(5)
         };
         final Long[] orderValues = {
-            new Long(1299L),
-            new Long(2450L),
-            new Long(875L),
-            new Long(1625L)
+            Long.valueOf(1299L),
+            Long.valueOf(2450L),
+            Long.valueOf(875L),
+            Long.valueOf(1625L)
         };
 
         int totalBoxes = 0;
@@ -32,12 +32,12 @@ public final class OrderRollupApp {
     }
 
     public static Integer calculatePackingUnits(int boxesPerOrder, int orderCount) {
-        return new Integer(boxesPerOrder * orderCount);
+        return Integer.valueOf(boxesPerOrder * orderCount);
     }
 
     public static Long estimateShippingCents(long baseCents, int boxCount) {
-        final Long perBoxCents = new Long(baseCents);
-        final Long totalCents = new Long(perBoxCents.longValue() * boxCount);
-        return new Long(totalCents.longValue());
+        final Long perBoxCents = Long.valueOf(baseCents);
+        final Long totalCents = Long.valueOf(perBoxCents.longValue() * boxCount);
+        return Long.valueOf(totalCents.longValue());
     }
 }
