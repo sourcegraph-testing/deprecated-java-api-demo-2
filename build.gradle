@@ -5,8 +5,8 @@ plugins {
 
 sonar {
   properties {
-    property "sonar.projectKey", "deprecated-java-api-demo-2"
     property "sonar.projectName", "deprecated-java-api-demo-2"
+    property "sonar.links.scm", "https://github.com/sourcegraph-testing/deprecated-java-api-demo-2"
   }
 }
 
